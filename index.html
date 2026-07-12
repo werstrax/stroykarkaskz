@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/styles.css?v=25" />
+  <link rel="stylesheet" href="css/styles.css?v=26" />
 
   <script type="application/ld+json">
   {
@@ -56,6 +56,9 @@
       { "@type": "Question", "name": "Что входит в расчёт каркаса, а что считается отдельно?", "acceptedAnswer": { "@type": "Answer", "text": "Ступень 1 — металлокаркас ЛСТК (изготовление и монтаж), свайный фундамент и ростверк. Тёплый контур и отделка — ступени 2 и 3, их бесплатно посчитает инженер до подписания договора." } },
       { "@type": "Question", "name": "Какая гарантия и что в неё входит?", "acceptedAnswer": { "@type": "Answer", "text": "Гарантия 10 лет на несущие конструкции и монтажные работы по договору. Расчётный срок службы оцинкованного каркаса — свыше 50 лет." } },
       { "@type": "Question", "name": "А если пожар? Металл же «поплывёт»?", "acceptedAnswer": { "@type": "Answer", "text": "Сталь не горит и не поддерживает горение. Оцинковка 275 г/м² плюс обшивка ГВЛ 12,5 мм дают огнезащиту конструкции — в отличие от деревянного каркаса, которому в этом сравнении нечего ответить." } },
+      { "@type": "Question", "name": "Металлический дом — это же холодно?", "acceptedAnswer": { "@type": "Answer", "text": "Металл в стене — это каркас, а не стена. Тепло держит пирог: минвата 150 мм с перекрёстным слоем, а термопрофиль разрывает мостики холода. Теплопотери считаем по СП РК для вашего региона — при −30 °C дома тепло." } },
+      { "@type": "Question", "name": "Дождь и град по крыше — не гремит?", "acceptedAnswer": { "@type": "Answer", "text": "Кровельный пирог гасит звук: минвата 150 мм работает и как звукоизоляция, между профлистом и комнатой — мембраны, вентзазор и потолок. По шуму дождя такой дом не отличается от любого дома с металлочерепицей." } },
+      { "@type": "Question", "name": "На металле будет конденсат?", "acceptedAnswer": { "@type": "Answer", "text": "Конденсат появляется там, где тёплый воздух встречает холодный металл. В нашем пироге профиль закрыт утеплителем и пароизоляцией — точка росы вынесена в утеплитель, каркас всегда сухой, а вентзазор выводит влагу наружу." } },
       { "@type": "Question", "name": "Нужен ли фундамент и делаете ли вы его?", "acceptedAnswer": { "@type": "Answer", "text": "Каркас весит ~30 кг/м², поэтому достаточно лёгкого свайно-винтового фундамента — он входит в ступень 1, которую бесплатно посчитает инженер. Можем смонтировать каркас и на ваш готовый фундамент." } },
       { "@type": "Question", "name": "Можно ли строить зимой?", "acceptedAnswer": { "@type": "Answer", "text": "Да. Сборка на болтах без бетона и «мокрых» процессов идёт круглый год — монтируем даже при −30 °C." } },
       { "@type": "Question", "name": "Есть ли оплата этапами?", "acceptedAnswer": { "@type": "Answer", "text": "Да, вы платите за результат каждого этапа: проект, производство, монтаж. График оплат фиксируется в договоре." } }
@@ -70,7 +73,7 @@
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="#top" class="logo" aria-label="СТРОЙКАРКАС — на главную">
-        <img class="logo__img" src="stroykarkaslogo.jpg" alt="Логотип СТРОЙКАРКАС" width="52" height="52" />
+        <img class="logo__img" src="assets/img/logo.webp" alt="Логотип СТРОЙКАРКАС" width="52" height="52" />
         <span class="logo__text">
           <span class="logo__name">СТРОЙКАРКАС</span>
           <span class="logo__tag">стальные каркасные дома · Казахстан</span>
@@ -113,9 +116,9 @@
     <!-- ================= HERO ================= -->
     <section class="hero hero--solo" id="hero">
       <div class="hero__media" aria-hidden="true">
-        <img class="hero__parallax" src="assets/img/real-bigframe.jpg" alt="" fetchpriority="high" />
+        <img class="hero__parallax" src="assets/img/real-bigframe.webp" alt="" fetchpriority="high" />
         <video class="hero__video" autoplay muted loop playsinline preload="metadata">
-          <source src="assets/video/hero.mp4?v=5" type="video/mp4" />
+          <source src="assets/video/hero.mp4?v=6" type="video/mp4" />
         </video>
         <div class="hero__scrim"></div>
       </div>
@@ -275,11 +278,11 @@
         <div class="vshow" data-reveal>
           <div class="vshow__text">
             <span class="kicker">Проверено на прочность</span>
-            <h3 class="vshow__title">Одна ферма держит <span class="accent">4 420&nbsp;кг</span></h3>
-            <p class="vshow__desc">Погрузчик ставит на нашу ферму ЛСТК рулон стали весом с внедорожник — а она держит. Сначала 170 кг, потом 2 000, потом 4 420. Так же держит и каркас вашего дома.</p>
+            <h3 class="vshow__title">Одна ферма держит <span class="accent"><span id="loadNum">4&nbsp;420</span>&nbsp;кг</span></h3>
+            <p class="vshow__desc">Погрузчик ставит на нашу ферму ЛСТК рулон стали весом с два внедорожника — а она держит. Сначала 170 кг, потом 2 000, потом 4 420. Так же держит и каркас вашего дома.</p>
           </div>
           <figure class="vshow__media tproof__media--video" id="testVideoWrap">
-            <video class="tproof__video" id="testVideo" controls playsinline preload="none" poster="assets/img/test-poster.jpg" aria-label="Испытание фермы ЛСТК: от 170 до 4420 кг">
+            <video class="tproof__video" id="testVideo" controls playsinline preload="none" poster="assets/img/test-poster.webp" aria-label="Испытание фермы ЛСТК: от 170 до 4420 кг">
               <source src="assets/video/test4420.mp4?v=1" type="video/mp4" />
             </video>
             <span class="tproof__play" aria-hidden="true"></span>
@@ -299,42 +302,42 @@
 
         <div class="scards scards--row" data-reveal>
           <article class="scard">
-            <img class="scard__img" src="assets/img/house-1.jpg" alt="Каркасные дома и коттеджи" loading="lazy" />
+            <img class="scard__img" src="assets/img/house-1.webp" alt="Каркасные дома и коттеджи" loading="lazy" />
             <div class="scard__body">
               <h3 class="scard__title">Дома и коттеджи</h3>
               <p class="scard__text">Тёплый дом — коробка за один сезон.</p>
             </div>
           </article>
           <article class="scard">
-            <img class="scard__img" src="assets/img/real-aframe.jpg" alt="А-фрейм дома и глэмпинги" loading="lazy" />
+            <img class="scard__img" src="assets/img/real-aframe.webp" alt="А-фрейм дома и глэмпинги" loading="lazy" />
             <div class="scard__body">
               <h3 class="scard__title">А-фреймы и глэмпинги</h3>
               <p class="scard__text">Домики для отдыха и туризма — как наши готовые объекты на фото.</p>
             </div>
           </article>
           <article class="scard">
-            <img class="scard__img" src="assets/img/svc-modular.jpg" alt="Дачи и модульные дома" loading="lazy" />
+            <img class="scard__img" src="assets/img/svc-modular.webp" alt="Дачи и модульные дома" loading="lazy" />
             <div class="scard__body">
               <h3 class="scard__title">Дача за сезон</h3>
               <p class="scard__text">Дачи и гостевые дома быстрой сборки — заезжайте этим же летом.</p>
             </div>
           </article>
           <article class="scard">
-            <img class="scard__img" src="assets/img/hotel.jpg" alt="Гостиницы и базы отдыха" loading="lazy" />
+            <img class="scard__img" src="assets/img/hotel.webp" alt="Гостиницы и базы отдыха" loading="lazy" />
             <div class="scard__body">
               <h3 class="scard__title">Гостиница к сезону</h3>
               <p class="scard__text">Открытие за 60 дней — не теряете сезонную выручку.</p>
             </div>
           </article>
           <article class="scard">
-            <img class="scard__img" src="assets/img/svc-retail.jpg" alt="Магазины и кафе" loading="lazy" />
+            <img class="scard__img" src="assets/img/svc-retail.webp" alt="Магазины и кафе" loading="lazy" />
             <div class="scard__body">
               <h3 class="scard__title">Магазины и кафе</h3>
               <p class="scard__text">Точка открывается в этом сезоне — смета под кредит.</p>
             </div>
           </article>
           <article class="scard">
-            <img class="scard__img" src="assets/img/svc-auto.jpg" alt="Автосервисы, СТО и автомойки" loading="lazy" />
+            <img class="scard__img" src="assets/img/svc-auto.webp" alt="Автосервисы, СТО и автомойки" loading="lazy" />
             <div class="scard__body">
               <h3 class="scard__title">СТО и автомойки</h3>
               <p class="scard__text">Большие проёмы под ворота — быстрая окупаемость.</p>
@@ -353,7 +356,7 @@
               Спросить про надстройку
             </a>
           </div>
-          <figure class="upfloor__media"><img src="assets/img/frame-c.jpg" alt="Лёгкий каркас надстройки ЛСТК" loading="lazy" /></figure>
+          <figure class="upfloor__media"><img src="assets/img/frame-c.webp" alt="Лёгкий каркас надстройки ЛСТК" loading="lazy" /></figure>
         </div>
 
       </div>
@@ -415,7 +418,7 @@
       <div class="container">
         <div class="prod__layout">
           <figure class="prod__media" data-reveal>
-            <img src="assets/img/real-worker.jpg" alt="Сборка ферм ЛСТК на производстве СТРОЙКАРКАС" loading="lazy" />
+            <img src="assets/img/real-worker.webp" alt="Сборка ферм ЛСТК на производстве СТРОЙКАРКАС" loading="lazy" />
             <figcaption class="prod__cap">Наше производство · сборка ферм ЛСТК</figcaption>
           </figure>
 
@@ -519,6 +522,11 @@
           </table>
         </div>
 
+        <div class="ctaband" data-reveal>
+          <span class="ctaband__text">Сомневаетесь в материале? Инженер сравнит варианты на вашем проекте — бесплатно</span>
+          <a href="https://wa.me/77013337108?text=Здравствуйте!%20Помогите%20сравнить%20материалы%20для%20моего%20проекта%20[сравнение]" target="_blank" rel="noopener" class="btn btn--gold btn--lg">Спросить инженера</a>
+        </div>
+
       </div>
     </section>
 
@@ -544,7 +552,7 @@
       <div class="works__track-wrap" data-reveal>
         <div class="works__track" id="worksTrack">
           <article class="work">
-            <div class="work__media"><img src="assets/img/real-hotelframe.jpg" alt="Каркас гостиницы на ЛСТК" loading="lazy" /></div>
+            <div class="work__media"><img src="assets/img/real-hotelframe.webp" alt="Каркас гостиницы на ЛСТК" loading="lazy" /></div>
             <div class="work__body">
               <span class="work__tag">Гостиница</span>
               <h3 class="work__title">Каркас гостиницы</h3>
@@ -552,7 +560,7 @@
             </div>
           </article>
           <article class="work">
-            <div class="work__media"><img src="assets/img/real-2fl-piles.jpg" alt="Двухэтажный каркас ЛСТК на свайном фундаменте" loading="lazy" /></div>
+            <div class="work__media"><img src="assets/img/real-2fl-piles.webp" alt="Двухэтажный каркас ЛСТК на свайном фундаменте" loading="lazy" /></div>
             <div class="work__body">
               <span class="work__tag">Дом</span>
               <h3 class="work__title">Двухэтажный дом на сваях</h3>
@@ -560,7 +568,7 @@
             </div>
           </article>
           <article class="work">
-            <div class="work__media"><img src="assets/img/real-forest.jpg" alt="Каркас дома с кровельными фермами" loading="lazy" /></div>
+            <div class="work__media"><img src="assets/img/real-forest.webp" alt="Каркас дома с кровельными фермами" loading="lazy" /></div>
             <div class="work__body">
               <span class="work__tag">Дом</span>
               <h3 class="work__title">Дом с мансардными фермами</h3>
@@ -568,7 +576,7 @@
             </div>
           </article>
           <article class="work">
-            <div class="work__media"><img src="assets/img/real-2fl.jpg" alt="Каркас двухэтажного дома ЛСТК" loading="lazy" /></div>
+            <div class="work__media"><img src="assets/img/real-2fl.webp" alt="Каркас двухэтажного дома ЛСТК" loading="lazy" /></div>
             <div class="work__body">
               <span class="work__tag">Дом</span>
               <h3 class="work__title">Каркас двухэтажного дома</h3>
@@ -576,7 +584,7 @@
             </div>
           </article>
           <article class="work">
-            <div class="work__media"><img src="assets/img/real-commerce.jpg" alt="Готовое торговое здание на ЛСТК" loading="lazy" /></div>
+            <div class="work__media"><img src="assets/img/real-commerce.webp" alt="Готовое торговое здание на ЛСТК" loading="lazy" /></div>
             <div class="work__body">
               <span class="work__tag">Коммерция</span>
               <h3 class="work__title">Торговое здание</h3>
@@ -584,7 +592,7 @@
             </div>
           </article>
           <article class="work">
-            <div class="work__media"><img src="assets/img/real-snow.jpg" alt="Монтаж каркаса ЛСТК в снегопад" loading="lazy" /></div>
+            <div class="work__media"><img src="assets/img/real-snow.webp" alt="Монтаж каркаса ЛСТК в снегопад" loading="lazy" /></div>
             <div class="work__body">
               <span class="work__tag">Зима</span>
               <h3 class="work__title">Монтаж в снегопад</h3>
@@ -592,7 +600,7 @@
             </div>
           </article>
           <article class="work">
-            <div class="work__media"><img src="assets/img/real-piles.jpg" alt="Монтаж винтовой сваи" loading="lazy" /></div>
+            <div class="work__media"><img src="assets/img/real-piles.webp" alt="Монтаж винтовой сваи" loading="lazy" /></div>
             <div class="work__body">
               <span class="work__tag">Фундамент</span>
               <h3 class="work__title">Монтаж винтовых свай</h3>
@@ -600,7 +608,7 @@
             </div>
           </article>
           <article class="work">
-            <div class="work__media"><img src="assets/img/real-mountains.jpg" alt="Строительство каркасного дома в горах" loading="lazy" /></div>
+            <div class="work__media"><img src="assets/img/real-mountains.webp" alt="Строительство каркасного дома в горах" loading="lazy" /></div>
             <div class="work__body">
               <span class="work__tag">Горы</span>
               <h3 class="work__title">Объект в горной местности</h3>
@@ -661,6 +669,11 @@
             <span class="step__time">приёмка за 1 день</span>
           </li>
         </ol>
+
+        <div class="ctaband" data-reveal>
+          <span class="ctaband__text">Начнём с первого шага — бесплатного замера?</span>
+          <a href="https://wa.me/77013337108?text=Здравствуйте!%20Хочу%20записаться%20на%20бесплатный%20замер%20[этапы]" target="_blank" rel="noopener" class="btn btn--gold btn--lg">Записаться на замер</a>
+        </div>
       </div>
     </section>
 
@@ -731,6 +744,18 @@
             <div class="acc__body"><p>Сталь не горит и не поддерживает горение. Оцинковка 275 г/м² плюс обшивка ГВЛ 12,5 мм дают огнезащиту конструкции — в отличие от деревянного каркаса, которому в этом сравнении нечего ответить.</p></div>
           </div>
           <div class="acc" data-reveal>
+            <button class="acc__head" aria-expanded="false">Металлический дом — это же холодно?<span class="acc__ic"></span></button>
+            <div class="acc__body"><p>Металл в стене — это каркас, а не стена. Тепло держит «пирог»: минвата 150 мм с перекрёстным слоем, а термопрофиль разрывает мостики холода. Теплопотери считаем по СП РК для вашего региона — при −30 °C дома тепло.</p></div>
+          </div>
+          <div class="acc" data-reveal>
+            <button class="acc__head" aria-expanded="false">Дождь и град по крыше — не гремит?<span class="acc__ic"></span></button>
+            <div class="acc__body"><p>Кровельный пирог гасит звук: минвата 150 мм работает и как звукоизоляция, между профлистом и комнатой — мембраны, вентзазор и потолок. По шуму дождя такой дом не отличается от любого дома с металлочерепицей.</p></div>
+          </div>
+          <div class="acc" data-reveal>
+            <button class="acc__head" aria-expanded="false">На металле будет конденсат?<span class="acc__ic"></span></button>
+            <div class="acc__body"><p>Конденсат появляется там, где тёплый воздух встречает холодный металл. В нашем «пироге» профиль закрыт утеплителем и пароизоляцией — точка росы вынесена в утеплитель, каркас всегда сухой, а вентзазор выводит влагу наружу.</p></div>
+          </div>
+          <div class="acc" data-reveal>
             <button class="acc__head" aria-expanded="false">Нужен ли фундамент и делаете ли вы его?<span class="acc__ic"></span></button>
             <div class="acc__body"><p>Каркас весит ~30 кг/м², поэтому достаточно лёгкого свайно-винтового фундамента — он входит в ступень 1, которую бесплатно посчитает инженер. Можем смонтировать каркас и на ваш готовый фундамент.</p></div>
           </div>
@@ -749,7 +774,7 @@
 
     <!-- ================= LEAD / CTA ================= -->
     <section class="cta" id="lead">
-      <div class="cta__bg" aria-hidden="true"><img src="assets/img/hero-night.jpg" alt="" loading="lazy" /></div>
+      <div class="cta__bg" aria-hidden="true"><img src="assets/img/hero-night.webp" alt="" loading="lazy" /></div>
       <div class="container cta__inner">
         <div class="cta__text" data-reveal>
           <span class="kicker kicker--light">Шаңырағың биік болсын</span>
@@ -758,7 +783,7 @@
           <ul class="cta__list">
             <li><svg class="ic" viewBox="0 0 24 24"><path d="M4 13l4 4L20 5"/></svg>Расчёт и выезд на замер — бесплатно</li>
             <li><svg class="ic" viewBox="0 0 24 24"><path d="M4 13l4 4L20 5"/></svg>Цена фиксируется в договоре</li>
-            <li><svg class="ic" viewBox="0 0 24 24"><path d="M4 13l4 4L20 5"/></svg>Ответим в течение 15 минут</li>
+            <li><svg class="ic" viewBox="0 0 24 24"><path d="M4 13l4 4L20 5"/></svg>Ответим за 15 минут — ежедневно с 9:00 до 21:00</li>
           </ul>
           <div class="cta__direct">
             <a href="tel:+77013337108" class="cta__phone">+7 (701) 333-71-08</a>
@@ -786,7 +811,7 @@
     <div class="container footer__grid">
       <div class="footer__col footer__col--brand">
         <div class="logo logo--footer">
-          <img class="logo__img" src="stroykarkaslogo.jpg" alt="Логотип СТРОЙКАРКАС" width="48" height="48" />
+          <img class="logo__img" src="assets/img/logo.webp" alt="Логотип СТРОЙКАРКАС" width="48" height="48" />
           <span class="logo__text">
             <span class="logo__name">СТРОЙКАРКАС</span>
             <span class="logo__tag">стальные каркасные дома · Казахстан</span>
@@ -807,7 +832,7 @@
       <div class="footer__col">
         <h4 class="footer__title">Контакты</h4>
         <a href="tel:+77013337108" class="footer__phone">+7 (701) 333-71-08</a>
-        <a href="https://wa.me/77013337108" target="_blank" rel="noopener">WhatsApp: +7 701 333 71 08</a>
+        <a href="https://wa.me/77013337108?text=Здравствуйте!%20Пишу%20с%20сайта%20СТРОЙКАРКАС%20[футер]" target="_blank" rel="noopener">WhatsApp: +7 701 333 71 08</a>
         <a href="https://instagram.com/stroykarkaskz" target="_blank" rel="noopener">Instagram @stroykarkaskz</a>
         <p class="footer__addr">Строим по всему Казахстану: Астана · Алматы · Шымкент · Караганда · Актобе и все регионы</p>
       </div>
@@ -843,6 +868,6 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="js/main.js?v=21" defer></script>
+  <script src="js/main.js?v=22" defer></script>
 </body>
 </html>

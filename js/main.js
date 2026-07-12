@@ -94,13 +94,24 @@
       function revealInView() {
         revealTicking = false;
         var vh = window.innerHeight || document.documentElement.clientHeight;
+        var batch = [];
         for (var i = revealEls.length - 1; i >= 0; i--) {
           var r = revealEls[i].getBoundingClientRect();
           if (r.top < vh * 0.92 && r.bottom > 0) {
-            revealEls[i].classList.add('is-inview');
+            batch.push(revealEls[i]);
             revealEls.splice(i, 1);
           }
         }
+        if (!batch.length) return;
+        batch.reverse(); // DOM-порядок: волна карточек слева направо
+        batch.forEach(function (el, j) {
+          var d = Math.min(j * 70, 350);
+          if (d) {
+            el.style.transitionDelay = d + 'ms';
+            setTimeout(function () { el.style.transitionDelay = ''; }, d + 800); // чтобы hover не лагал после reveal
+          }
+          el.classList.add('is-inview');
+        });
       }
       function onRevealScroll() { if (!revealTicking) { revealTicking = true; requestAnimationFrame(revealInView); } }
       revealInView(); // reveal above-the-fold immediately
@@ -129,6 +140,30 @@
             if (y < window.innerHeight * 1.2) heroImg.style.transform = 'scale(1.12) translateY(' + (y * 0.12) + 'px)';
           });
         }, { passive: true });
+      }
+      /* ---------- Счётчик нагрузки 170 → 4 420 кг ---------- */
+      var loadNum = document.getElementById('loadNum');
+      if (loadNum) {
+        var loadHost = document.querySelector('.vshow');
+        var loadDone = false;
+        var loadTick = function () {
+          if (loadDone || !loadHost || !loadHost.classList.contains('is-inview')) return;
+          loadDone = true;
+          window.removeEventListener('scroll', loadTick);
+          var t0 = null, dur = 1600;
+          function fr(ts) {
+            if (!t0) t0 = ts;
+            var p = Math.min(1, (ts - t0) / dur);
+            var e = 1 - Math.pow(1 - p, 3); // ease-out
+            var v = Math.round(170 + (4420 - 170) * e);
+            loadNum.textContent = String(v).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+            if (p < 1) requestAnimationFrame(fr);
+          }
+          requestAnimationFrame(fr);
+        };
+        window.addEventListener('scroll', loadTick, { passive: true });
+        setTimeout(loadTick, 400);
+        setTimeout(loadTick, 1900); // на случай reveal-фейлсейфа без скролла
       }
     }
 
