@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Экскурсия по каркасу — СТРОЙКАРКАС (демо)</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231B9CAD'/%3E%3Cpath d='M6 22 L16 8 L26 22 Z' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linejoin='round'/%3E%3Cpath d='M6 22 H26' stroke='%23C6A24C' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <style>
+    :root { --teal:#1B9CAD; --gold:#C6A24C; --graphite:#2C3A42; --dark:#141C21; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:auto; }
+    body { background:var(--dark); color:#fff; font-family:'Segoe UI',system-ui,sans-serif; }
+    .hdr { position:fixed; top:0; left:0; right:0; z-index:50; display:flex; align-items:center; gap:12px; padding:14px 20px;
+           background:linear-gradient(180deg, rgba(20,28,33,.85), transparent); }
+    .hdr img { width:40px; height:40px; border-radius:50%; }
+    .hdr b { font-size:15px; letter-spacing:.06em; }
+    .hdr .demo { margin-left:auto; font-size:11px; font-weight:700; letter-spacing:.18em; color:var(--gold);
+                 border:1px solid var(--gold); border-radius:999px; padding:5px 12px; }
+    .hint { position:fixed; bottom:22px; left:50%; transform:translateX(-50%); z-index:50; font-size:12px; letter-spacing:.1em;
+            color:rgba(255,255,255,.75); text-transform:uppercase; transition:opacity .4s; display:flex; align-items:center; gap:8px; }
+    .hint.gone { opacity:0; }
+    .hint::after { content:''; width:1px; height:26px; background:linear-gradient(180deg,var(--gold),transparent); animation:drip 1.4s infinite; }
+    @keyframes drip { 0%{transform:scaleY(0);transform-origin:top} 50%{transform:scaleY(1);transform-origin:top} 51%{transform-origin:bottom} 100%{transform:scaleY(0);transform-origin:bottom} }
+
+    .tour { height:520vh; position:relative; }
+    .stage { position:sticky; top:0; height:100vh; overflow:hidden; }
+    .ph, canvas.scrub { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    .ph { transition:none; will-change:transform,opacity; }
+    #phFinal { opacity:0; }
+    canvas.scrub { opacity:0; }
+    .flash { position:absolute; inset:0; background:radial-gradient(circle, rgba(255,255,255,.95), rgba(27,156,173,.6)); opacity:0; pointer-events:none; }
+    .vig { position:absolute; inset:0; background:radial-gradient(ellipse at center, transparent 55%, rgba(20,28,33,.55)); pointer-events:none; }
+
+    .cap { position:absolute; left:6vw; bottom:14vh; max-width:520px; opacity:0; transform:translateY(24px); pointer-events:none; }
+    .cap .k { display:inline-block; font-size:11px; font-weight:700; letter-spacing:.22em; color:var(--gold); text-transform:uppercase; margin-bottom:10px; }
+    .cap h2 { font-size:clamp(26px,4.2vw,44px); line-height:1.08; margin-bottom:10px; text-shadow:0 2px 18px rgba(0,0,0,.5); }
+    .cap h2 .a { color:var(--teal); }
+    .cap p { font-size:clamp(14px,1.4vw,17px); color:rgba(255,255,255,.88); line-height:1.5; text-shadow:0 1px 10px rgba(0,0,0,.6); }
+    .cap .cta { pointer-events:auto; display:inline-flex; align-items:center; gap:10px; margin-top:18px; background:var(--gold); color:#141C21;
+                font-weight:700; font-size:15px; text-decoration:none; padding:14px 26px; border-radius:12px; }
+    .cap .cta:hover { filter:brightness(1.07); }
+
+    .outro { min-height:60vh; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; text-align:center; padding:60px 20px; }
+    .outro h3 { font-size:clamp(20px,3vw,30px); }
+    .outro a.back { color:var(--teal); font-size:14px; }
+    .load { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; z-index:5; background:var(--dark);
+            font-size:13px; letter-spacing:.15em; color:rgba(255,255,255,.6); text-transform:uppercase; transition:opacity .5s; }
+    .load.gone { opacity:0; pointer-events:none; }
+    @media (prefers-reduced-motion: reduce) {
+      .tour { height:auto; } .stage { position:static; height:auto; }
+      .ph, canvas.scrub { position:static; height:56vw; opacity:1 !important; transform:none !important; }
+      .cap { position:static; opacity:1 !important; transform:none !important; padding:26px 6vw; max-width:640px; }
+      .flash, .hint, .load { display:none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hdr">
+    <img src="assets/img/logo.webp" alt="" /><b>СТРОЙКАРКАС</b>
+    <span class="demo">ДЕМО · ЭКСКУРСИЯ</span>
+  </header>
+  <div class="hint" id="hint">Листайте</div>
+
+  <section class="tour" id="tour">
+    <div class="stage">
+      <div class="load" id="load">Загружаем экскурсию…</div>
+      <img class="ph" id="phExt" src="assets/img/real-aframe.webp" alt="Готовые дома А-фрейм" />
+      <canvas class="scrub" id="cv"></canvas>
+      <img class="ph" id="phFinal" src="assets/img/frame-a.webp" alt="Профиль ЛСТК крупным планом" />
+      <div class="vig"></div>
+      <div class="flash" id="flash"></div>
+
+      <div class="cap" data-f="0.02" data-t="0.24">
+        <span class="k">Остановка 1 · Снаружи</span>
+        <h2>Обычный тёплый дом</h2>
+        <p>Фасад, кровля, окна — ничем не выдаёт, из чего он собран. Секрет внутри стены.</p>
+      </div>
+      <div class="cap" data-f="0.36" data-t="0.58">
+        <span class="k">Остановка 2 · Внутри стены</span>
+        <h2>Оцинкованная <span class="a">сталь</span></h2>
+        <p>Каркас из профиля ЛСТК: не гниёт, не горит, не даёт усадки. Собран на болтах и заклёпках — ни одного сварного шва.</p>
+      </div>
+      <div class="cap" data-f="0.62" data-t="0.84">
+        <span class="k">Остановка 3 · Конструктор</span>
+        <h2>Каждая деталь — <span class="a">со своим номером</span></h2>
+        <p>Детали пронумерованы на заводе и встают точно на своё место. С завода — комплект, на объекте — здание.</p>
+      </div>
+      <div class="cap" data-f="0.88" data-t="1.01">
+        <span class="k">Финал · Материал</span>
+        <h2>Профиль на <span class="a">100+ лет</span></h2>
+        <p>Сталь G350, цинк 275 г/м². Хотите посмотреть вживую, как это собирается?</p>
+        <a class="cta" href="https://wa.me/77013337108?text=Здравствуйте!%20Посмотрел%20экскурсию%20по%20каркасу%20—%20хочу%20расчёт%20[тур]" target="_blank" rel="noopener">Обсудить мой проект →</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="outro">
+    <h3>Это демо скролл-экскурсии для главной страницы</h3>
+    <a class="back" href="index.html">← Вернуться на сайт</a>
+  </div>
+
+  <script>
+  (function(){
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) { document.getElementById('load').remove(); return; }
+    var N = 49; // кадры ИИ-полёта в assets/tour/
+    var cv = document.getElementById('cv'), cx = cv.getContext('2d');
+    var phExt = document.getElementById('phExt'), phFin = document.getElementById('phFinal');
+    var flash = document.getElementById('flash'), hint = document.getElementById('hint');
+    var caps = [].slice.call(document.querySelectorAll('.cap'));
+    var tour = document.getElementById('tour');
+    var frames = [], loaded = 0, ready = false;
+
+    function pad(n){ return ('000'+n).slice(-3); }
+    for (var i = 1; i <= N; i++) {
+      var im = new Image();
+      im.src = 'assets/tour/f' + pad(i) + '.webp';
+      im.onload = im.onerror = function(){ if (++loaded >= Math.min(N,8) && !ready) { ready = true; document.getElementById('load').classList.add('gone'); paint(); } };
+      frames.push(im);
+    }
+    if (!N) { ready = true; document.getElementById('load').classList.add('gone'); }
+
+    function size(){ cv.width = innerWidth; cv.height = innerHeight; paint(); }
+    addEventListener('resize', size);
+
+    function drawCover(img){
+      if (!img || !img.naturalWidth) return;
+      var cw = cv.width, ch = cv.height, iw = img.naturalWidth, ih = img.naturalHeight;
+      var s = Math.max(cw/iw, ch/ih), w = iw*s, h = ih*s;
+      cx.drawImage(img, (cw-w)/2, (ch-h)/2, w, h);
+    }
+    function clamp(v,a,b){ return v<a?a:(v>b?b:v); }
+    function seg(p,a,b){ return clamp((p-a)/(b-a), 0, 1); }
+
+    var lastP = -1;
+    function paint(){
+      var r = tour.getBoundingClientRect();
+      var total = r.height - innerHeight;
+      var p = clamp(-r.top / total, 0, 1);
+      if (p === lastP && ready) return; lastP = p;
+      if (p > 0.02) hint.classList.add('gone'); else hint.classList.remove('gone');
+
+      /* Фаза A: наезд на дом (0–.28) */
+      var a = seg(p, 0, 0.28);
+      phExt.style.transform = 'scale(' + (1 + a*0.35) + ')';
+      phExt.style.opacity = p < 0.31 ? 1 : 0;
+      phExt.style.filter = 'blur(' + (seg(p,0.24,0.31)*10) + 'px)';
+
+      /* Телепорт-вспышка (.27–.34) */
+      var f = seg(p,0.27,0.305) * (1 - seg(p,0.305,0.36));
+      flash.style.opacity = f;
+
+      /* Фаза B: скраб ИИ-полёта сквозь каркас (.31–.86) */
+      var b = seg(p, 0.31, 0.86);
+      if (p >= 0.30 && p <= 0.885 && N) {
+        cv.style.opacity = 1;
+        drawCover(frames[Math.round(b * (N-1))]);
+      } else cv.style.opacity = 0;
+
+      /* Фаза C: финальный макро-кадр (.86–1) */
+      var c = seg(p, 0.855, 0.92);
+      phFin.style.opacity = c;
+      phFin.style.transform = 'scale(' + (1.18 - seg(p,0.86,1)*0.18) + ')';
+
+      /* Подписи */
+      caps.forEach(function(el){
+        var from = +el.dataset.f, to = +el.dataset.t;
+        var vis = seg(p, from, from+0.045) * (1 - seg(p, to-0.045, to));
+        el.style.opacity = vis;
+        el.style.transform = 'translateY(' + (24 - vis*24) + 'px)';
+      });
+    }
+    var tick = false;
+    addEventListener('scroll', function(){ if (!tick){ tick = true; requestAnimationFrame(function(){ tick = false; paint(); }); } }, { passive:true });
+    size();
+  })();
+  </script>
+</body>
+</html>
