@@ -1075,3 +1075,12 @@ ul { list-style: none; }
 
 @media (prefers-reduced-motion: reduce) { .prod__media img, .cta__bg img { animation: none; }
 }
+
+/* ---------- Кадр «комплект-конструктор» ---------- */
+.kitshot { position: relative; border-radius: var(--radius); overflow: hidden; margin: 6px 0 40px; box-shadow: var(--shadow); }
+.kitshot img { width: 100%; display: block; }
+.kitshot__cap { position: absolute; left: 16px; bottom: 16px; max-width: 560px; background: rgba(20,28,33,.8); color: #fff; font-size: 14px; line-height: 1.45; padding: 13px 18px; border-radius: 12px; }
+.kitshot__cap b { color: var(--gold); }
+@media (max-width: 700px) {
+  .kitshot__cap { position: static; max-width: none; border-radius: 0; font-size: 13px; }
+}
