@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /tour.html
+
+Sitemap: https://stroykarkas.kz/sitemap.xml
