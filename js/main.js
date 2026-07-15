@@ -330,6 +330,14 @@
           info.hidden = false;
         }
       });
+      // Демонстрируем интерактивность: раскрываем первый слой первой карточки
+      var firstLayer = techCards.querySelector('.ncard .layer[data-info]');
+      if (firstLayer) {
+        var fInfo = firstLayer.closest('.ncard').querySelector('.ncard__info');
+        firstLayer.classList.add('is-open');
+        fInfo.innerHTML = '<b>' + firstLayer.textContent.trim() + '.</b> ' + firstLayer.getAttribute('data-info');
+        fInfo.hidden = false;
+      }
     }
 
     /* ---------- Phone mask (KZ +7) ---------- */
