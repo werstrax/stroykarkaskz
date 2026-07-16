@@ -4,17 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>document.documentElement.classList.replace('no-js','js');</script>
-  <title>Каркасные дома и здания из ЛСТК в Казахстане | СТРОЙКАРКАС</title>
-  <meta name="description" content="СТРОЙКАРКАС — стальные каркасы домов, гостиниц и магазинов по всему Казахстану. От завода до готового здания за считанные недели. Каркас не горит и служит 50+ лет. Без сварки и бетона, монтаж даже при −30 °C." />
+  <title>Каркасные дома и здания из ЛСТК под ключ — Астана, Алматы, весь Казахстан | СТРОЙКАРКАС</title>
+  <meta name="description" content="СТРОЙКАРКАС — завод ЛСТК в Астане. Каркасные дома, гостиницы и магазины под ключ по всему Казахстану: не горит, служит 50+ лет, сборка от 5 дней даже при −30 °C." />
   <meta name="theme-color" content="#1B9CAD" />
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="СТРОЙКАРКАС — от завода до готового здания за считанные недели" />
   <meta property="og:description" content="Стальные каркасы домов, гостиниц и магазинов на ЛСТК. Не горит, служит 50+ лет. Без сварки и бетона. Цена фиксируется в договоре." />
   <meta property="og:url" content="https://stroykarkas.kz/" />
-  <meta property="og:image" content="https://stroykarkas.kz/assets/img/real-bigframe.jpg" />
+  <meta property="og:image" content="https://stroykarkas.kz/assets/img/og-cover.jpg" />
   <meta property="og:locale" content="ru_KZ" />
   <link rel="canonical" href="https://stroykarkas.kz/" />
+  <link rel="alternate" hreflang="ru" href="https://stroykarkas.kz/" />
+  <link rel="alternate" hreflang="x-default" href="https://stroykarkas.kz/" />
+  <meta name="geo.placename" content="Астана" />
+  <meta property="og:site_name" content="СТРОЙКАРКАС" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Стальной каркас ЛСТК — СТРОЙКАРКАС" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="СТРОЙКАРКАС — завод ЛСТК в Астане" />
+  <meta name="twitter:description" content="Каркасные дома, гостиницы и магазины под ключ по Казахстану. Не горит, служит 50+ лет." />
+  <meta name="twitter:image" content="https://stroykarkas.kz/assets/img/og-cover.jpg" />
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231B9CAD'/%3E%3Cpath d='M6 22 L16 8 L26 22 Z' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linejoin='round'/%3E%3Cpath d='M6 22 H26' stroke='%23C6A24C' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E" />
 
@@ -22,48 +33,571 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
+  <link rel="preload" as="image" href="assets/img/real-bigframe.webp" fetchpriority="high" />
+
   <link rel="stylesheet" href="css/styles.css?v=29" />
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "GeneralContractor",
-    "name": "СТРОЙКАРКАС",
-    "description": "Завод ЛСТК: с завода — комплект, на объекте — здание. Стальные каркасы домов, гостиниц и магазинов по всему Казахстану. Без сварки и мокрых работ.",
-    "image": "assets/img/hero.jpg",
-    "telephone": "+7-701-333-71-08",
-    "sameAs": ["https://instagram.com/stroykarkaskz"],
-    "areaServed": { "@type": "Country", "name": "Казахстан" },
-    "address": { "@type": "PostalAddress", "addressCountry": "KZ" },
-    "makesOffer": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Каркасные дома и коттеджи (ЛСТК)" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "А-фреймы и глэмпинги" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Дачи и гостевые дома" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Гостиницы и базы отдыха" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Магазины и кафе" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "СТО и автомойки" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Надстройки и мансарды без усиления фундамента" } }
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "GeneralContractor",
+      "@id": "https://stroykarkas.kz/#organization",
+      "name": "СТРОЙКАРКАС",
+      "alternateName": [
+        "Stroykarkas",
+        "Строй Каркас",
+        "StroyKarkas KZ"
+      ],
+      "url": "https://stroykarkas.kz/",
+      "slogan": "От завода — до готового здания за считанные недели",
+      "description": "Собственный завод ЛСТК в Астане: проектируем, производим и монтируем стальные каркасы зданий по всему Казахстану. Оцинкованная сталь G350/Zn275, сборка на болтах без сварки и бетона, монтаж круглый год даже при −30 °C, сейсмостойкость до 9 баллов по СП РК.",
+      "telephone": "+77013337108",
+      "currenciesAccepted": "KZT",
+      "image": [
+        "https://stroykarkas.kz/assets/img/real-bigframe.jpg",
+        "https://stroykarkas.kz/assets/img/real-hotelframe.webp",
+        "https://stroykarkas.kz/assets/img/real-worker.webp"
+      ],
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://stroykarkas.kz/assets/img/logo.webp"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Астана",
+        "addressCountry": "KZ"
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Казахстан",
+          "sameAs": "https://www.wikidata.org/wiki/Q232"
+        },
+        {
+          "@type": "City",
+          "name": "Астана",
+          "sameAs": "https://www.wikidata.org/wiki/Q1520"
+        },
+        {
+          "@type": "City",
+          "name": "Алматы",
+          "sameAs": "https://www.wikidata.org/wiki/Q1526"
+        },
+        {
+          "@type": "City",
+          "name": "Шымкент"
+        },
+        {
+          "@type": "City",
+          "name": "Караганда"
+        },
+        {
+          "@type": "City",
+          "name": "Актобе"
+        }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+77013337108",
+        "contactType": "sales",
+        "areaServed": "KZ",
+        "availableLanguage": [
+          "ru",
+          "kk"
+        ],
+        "hoursAvailable": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "09:00",
+          "closes": "21:00"
+        }
+      },
+      "sameAs": [
+        "https://instagram.com/stroykarkaskz"
+      ],
+      "knowsAbout": [
+        "ЛСТК (лёгкие стальные тонкостенные конструкции)",
+        "Стальной каркас здания",
+        "Оцинкованная сталь G350",
+        "Цинковое покрытие Zn275",
+        "Каркасно-модульное строительство",
+        "Быстровозводимые здания из металлокаркаса",
+        "Сейсмостойкое строительство до 9 баллов по СП РК",
+        "Свайно-винтовой фундамент",
+        "Надстройка этажей и мансард без усиления фундамента",
+        "А-фрейм дома, барнхаус и глэмпинги",
+        "Всесезонный монтаж при отрицательных температурах"
+      ],
+      "keywords": "ЛСТК, каркасный дом под ключ, стальной каркас, каркасное строительство Казахстан, быстровозводимые здания, модульные здания, металлокаркас, А-фрейм, барнхаус, надстройка этажа без усиления фундамента, оцинкованная сталь, завод ЛСТК Астана, каркасный дом Алматы",
+      "hasOfferCatalog": {
+        "@id": "https://stroykarkas.kz/#catalog"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://stroykarkas.kz/#website",
+      "url": "https://stroykarkas.kz/",
+      "name": "СТРОЙКАРКАС",
+      "inLanguage": "ru",
+      "publisher": {
+        "@id": "https://stroykarkas.kz/#organization"
+      }
+    },
+    {
+      "@type": [
+        "WebPage",
+        "FAQPage"
+      ],
+      "@id": "https://stroykarkas.kz/#webpage",
+      "url": "https://stroykarkas.kz/",
+      "name": "Каркасные дома и здания из ЛСТК под ключ — Астана, Алматы, весь Казахстан | СТРОЙКАРКАС",
+      "isPartOf": {
+        "@id": "https://stroykarkas.kz/#website"
+      },
+      "about": {
+        "@id": "https://stroykarkas.kz/#organization"
+      },
+      "primaryImageOfPage": "https://stroykarkas.kz/assets/img/real-bigframe.jpg",
+      "inLanguage": "ru",
+      "dateModified": "2026-07-16",
+      "breadcrumb": {
+        "@id": "https://stroykarkas.kz/#breadcrumb"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Из чего делается каркас?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Несущий каркас — из лёгких стальных тонкостенных конструкций (ЛСТК): оцинкованный профиль, сборка на болтах и заклёпках, без сварки. Металл не ржавеет и не горит, геометрия стен идеально ровная."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Сколько времени занимает сборка каркаса?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Каркас собирается как конструктор: от 5 до 30 дней в зависимости от площади — и 30 это максимум. Точный срок фиксируем в договоре и не сдвигаем."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Где в Казахстане заказать каркасный дом под ключ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "У нас собственный завод ЛСТК в Астане, а монтаж мы ведём по всему Казахстану — Астана, Алматы, Шымкент, Караганда, Актобе и все регионы. Проектируем, производим и собираем каркас под ключ."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Есть ли у вас собственный завод ЛСТК?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Собственный завод в Астане со станками ЧПУ: катаем и раскраиваем оцинкованный профиль из стали G350 с цинковым покрытием Zn275. Полный цикл — проект, производство, доставка, монтаж — в одних руках, без наценки посредника."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "В каких городах вы строите?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Монтируем по всему Казахстану: Астана и Акмолинская область, Алматы, Шымкент, Караганда, Актобе, Костанай, Атырау и другие регионы. Своя логистика и монтажные бригады."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли надстроить этаж без усиления фундамента?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Как правило, да. Надстройка из ЛСТК весит 25–40 кг/м² — в 3–5 раз легче кирпича или бетона, а фундаменты по нормам имеют запас надёжности. Обычно этого достаточно на один этаж или мансарду без работ с фундаментом. Монтаж идёт без тяжёлой техники, вы можете продолжать жить в доме. Точную возможность инженер рассчитывает по СП РК под ваш фундамент."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Подходит ли каркас для сейсмозоны Алматы?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, и даже предпочтителен. Алматы и юг Казахстана — зона до 9 баллов (MSK-64). Лёгкий стальной каркас на болтах работает как единая упругая рама и за счёт малой инерционной массы лучше переносит сейсмику. Расчёт ведём по СП РК 2.03-30 «Строительство в сейсмических районах»."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Не холодно ли зимой в доме из металлокаркаса? Что с мостиками холода?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Металл в стене — это каркас, а не стена. Тепло держит пирог: минвата 150 мм с перекрёстным слоем, а термопрофиль разрывает мостики холода. Теплопотери считаем по СП РК для вашего региона — при −30 °C дома тепло."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какие минусы у ЛСТК и как вы их закрываете?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Честно про типовые страхи: мостики холода, гулкость и промерзание стыков — всё это появляется при плохом монтаже. Мы закрываем их конструктивно: термопрофиль с прорезями, перекрёстное утепление минватой, пароизоляция и узлы по СП РК. При грамотном пироге дом тёплый и тихий."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Сколько служит каркас из оцинкованной стали?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Расчётный срок службы оцинкованного профиля G350/Zn275 — свыше 50 лет: сталь не ржавеет. Гарантия по договору — 10 лет на несущие конструкции и монтаж. Срок службы и гарантия — это разные вещи."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Почему на сайте нет цены и от чего зависит стоимость?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Стоимость индивидуальна: зависит от площади, этажности, региона и логистики, типа фундамента и комплектации. Мы считаем от собственного завода без посреднической наценки, фиксируем цену в договоре и не двигаем её. Инженер посчитает ваш проект бесплатно."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что входит в расчёт каркаса, а что считается отдельно?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ступень 1 — металлокаркас ЛСТК (изготовление и монтаж), свайный фундамент и ростверк. Тёплый контур и отделка — ступени 2 и 3, их бесплатно посчитает инженер до подписания договора."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какая гарантия и что в неё входит?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Гарантия 10 лет на несущие конструкции и монтажные работы по договору. Расчётный срок службы оцинкованного каркаса — свыше 50 лет."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "А если пожар? Металл же «поплывёт»?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Сталь не горит и не поддерживает горение. Оцинковка 275 г/м² плюс обшивка ГВЛ 12,5 мм дают огнезащиту конструкции — в отличие от деревянного каркаса, которому в этом сравнении нечего ответить."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Дождь и град по крыше — не гремит?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Кровельный пирог гасит звук: минвата 150 мм работает и как звукоизоляция, между профлистом и комнатой — мембраны, вентзазор и потолок. По шуму дождя такой дом не отличается от любого дома с металлочерепицей."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "На металле будет конденсат?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Конденсат появляется там, где тёплый воздух встречает холодный металл. В нашем пироге профиль закрыт утеплителем и пароизоляцией — точка росы вынесена в утеплитель, каркас всегда сухой, а вентзазор выводит влагу наружу."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Нужен ли фундамент и делаете ли вы его?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Каркас весит ~30 кг/м², поэтому достаточно лёгкого свайно-винтового фундамента — он входит в ступень 1, которую бесплатно посчитает инженер. Можем смонтировать каркас и на ваш готовый фундамент."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Можно ли строить каркасный дом зимой?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Каркасное строительство — одна из немногих всесезонных технологий: нет бетона и мокрых работ, которые боятся мороза. Сборка на болтах идёт круглый год, монтируем даже при −30 °C."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Есть ли оплата этапами?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да, вы платите за результат каждого этапа: проект, производство, монтаж. График оплат фиксируется в договоре."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://stroykarkas.kz/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://stroykarkas.kz/"
+        }
+      ]
+    },
+    {
+      "@type": "WarrantyPromise",
+      "@id": "https://stroykarkas.kz/#warranty10",
+      "durationOfWarranty": {
+        "@type": "QuantitativeValue",
+        "value": 10,
+        "unitCode": "ANN",
+        "unitText": "лет"
+      },
+      "warrantyScope": "Гарантия 10 лет на несущие стальные конструкции и монтажные работы по договору"
+    },
+    {
+      "@type": "Product",
+      "@id": "https://stroykarkas.kz/#product-frame",
+      "name": "Стальной каркас ЛСТК (металлокомплект)",
+      "description": "Комплект несущих конструкций из лёгких стальных тонкостенных профилей: изготовление на собственном заводе с раскроем на ЧПУ, сборка на болтах и заклёпках без сварки.",
+      "brand": {
+        "@id": "https://stroykarkas.kz/#organization"
+      },
+      "manufacturer": {
+        "@id": "https://stroykarkas.kz/#organization"
+      },
+      "material": "Оцинкованная сталь G350, цинковое покрытие Zn275",
+      "category": "Металлоконструкции / ЛСТК",
+      "additionalProperty": [
+        {
+          "@type": "PropertyValue",
+          "name": "Расчётный срок службы",
+          "value": "свыше 50 лет"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Сейсмостойкость",
+          "value": "до 9 баллов (СП РК)"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Удельный вес каркаса",
+          "value": "≈30 кг/м²"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Соединения",
+          "value": "болты и заклёпки, без сварки"
+        }
+      ]
+    },
+    {
+      "@type": "OfferCatalog",
+      "@id": "https://stroykarkas.kz/#catalog",
+      "name": "Строительство и производство на стальном каркасе ЛСТК",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "warranty": {
+            "@id": "https://stroykarkas.kz/#warranty10"
+          },
+          "itemOffered": {
+            "@type": "Service",
+            "@id": "https://stroykarkas.kz/#service-homes",
+            "name": "Каркасные дома и коттеджи из ЛСТК под ключ",
+            "serviceType": "Строительство каркасных домов",
+            "provider": {
+              "@id": "https://stroykarkas.kz/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Казахстан"
+            },
+            "description": "Проектирование, производство и монтаж каркасных домов и коттеджей на стальном каркасе ЛСТК по нормам СП РК."
+          }
+        },
+        {
+          "@type": "Offer",
+          "warranty": {
+            "@id": "https://stroykarkas.kz/#warranty10"
+          },
+          "itemOffered": {
+            "@type": "Service",
+            "@id": "https://stroykarkas.kz/#service-aframe",
+            "name": "А-фреймы, барнхаусы и глэмпинги",
+            "serviceType": "Строительство А-фрейм домов",
+            "provider": {
+              "@id": "https://stroykarkas.kz/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Казахстан"
+            },
+            "description": "Каркасы А-фрейм домов, барнхаусов и глэмпингов для туризма и баз отдыха."
+          }
+        },
+        {
+          "@type": "Offer",
+          "warranty": {
+            "@id": "https://stroykarkas.kz/#warranty10"
+          },
+          "itemOffered": {
+            "@type": "Service",
+            "@id": "https://stroykarkas.kz/#service-dacha",
+            "name": "Дачи и гостевые дома",
+            "serviceType": "Строительство дач",
+            "provider": {
+              "@id": "https://stroykarkas.kz/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Казахстан"
+            },
+            "description": "Дачи и гостевые дома быстрой сборки на лёгком стальном каркасе."
+          }
+        },
+        {
+          "@type": "Offer",
+          "warranty": {
+            "@id": "https://stroykarkas.kz/#warranty10"
+          },
+          "itemOffered": {
+            "@type": "Service",
+            "@id": "https://stroykarkas.kz/#service-hotel",
+            "name": "Гостиницы и базы отдыха",
+            "serviceType": "Строительство гостиниц",
+            "provider": {
+              "@id": "https://stroykarkas.kz/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Казахстан"
+            },
+            "description": "Гостиницы, мотели и базы отдыха на каркасе ЛСТК — ввод за один сезон."
+          }
+        },
+        {
+          "@type": "Offer",
+          "warranty": {
+            "@id": "https://stroykarkas.kz/#warranty10"
+          },
+          "itemOffered": {
+            "@type": "Service",
+            "@id": "https://stroykarkas.kz/#service-retail",
+            "name": "Магазины и кафе",
+            "serviceType": "Строительство коммерческих зданий",
+            "provider": {
+              "@id": "https://stroykarkas.kz/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Казахстан"
+            },
+            "description": "Магазины, кафе и торговые павильоны на стальном каркасе с большими пролётами."
+          }
+        },
+        {
+          "@type": "Offer",
+          "warranty": {
+            "@id": "https://stroykarkas.kz/#warranty10"
+          },
+          "itemOffered": {
+            "@type": "Service",
+            "@id": "https://stroykarkas.kz/#service-auto",
+            "name": "СТО и автомойки",
+            "serviceType": "Строительство СТО и автомоек",
+            "provider": {
+              "@id": "https://stroykarkas.kz/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Казахстан"
+            },
+            "description": "СТО, автосервисы и автомойки с широкими проёмами под ворота."
+          }
+        },
+        {
+          "@type": "Offer",
+          "warranty": {
+            "@id": "https://stroykarkas.kz/#warranty10"
+          },
+          "itemOffered": {
+            "@type": "Service",
+            "@id": "https://stroykarkas.kz/#service-addfloor",
+            "name": "Надстройки этажей и мансарды без усиления фундамента",
+            "serviceType": "Надстройка этажей",
+            "provider": {
+              "@id": "https://stroykarkas.kz/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Казахстан"
+            },
+            "description": "Надстройка этажей и мансард без усиления существующего фундамента — каркас весит ≈30 кг/м²."
+          }
+        },
+        {
+          "@type": "Offer",
+          "warranty": {
+            "@id": "https://stroykarkas.kz/#warranty10"
+          },
+          "itemOffered": {
+            "@type": "Service",
+            "@id": "https://stroykarkas.kz/#service-modular",
+            "name": "Вахтовые городки и модульные здания",
+            "serviceType": "Модульное строительство",
+            "provider": {
+              "@id": "https://stroykarkas.kz/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Казахстан"
+            },
+            "description": "Вахтовые городки, блок-модули, столовые и общежития на стальном каркасе ЛСТК — мобильно и всесезонно."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "@id": "https://stroykarkas.kz/#service-manufacturing",
+            "name": "Производство ЛСТК-конструкций на заводе",
+            "serviceType": "Производство металлоконструкций",
+            "provider": {
+              "@id": "https://stroykarkas.kz/#organization"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "Казахстан"
+            },
+            "description": "Изготовление металлоконструкций ЛСТК на собственном заводе: раскрой профиля на ЧПУ, контроль ОТК, полный цикл проект–производство–монтаж."
+          }
+        },
+        {
+          "@type": "Offer",
+          "warranty": {
+            "@id": "https://stroykarkas.kz/#warranty10"
+          },
+          "itemOffered": {
+            "@id": "https://stroykarkas.kz/#product-frame"
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      { "@type": "Question", "name": "Из чего делается каркас?", "acceptedAnswer": { "@type": "Answer", "text": "Несущий каркас — из лёгких стальных тонкостенных конструкций (ЛСТК): оцинкованный профиль, сборка на болтах и заклёпках, без сварки. Металл не ржавеет и не горит, геометрия стен идеально ровная." } },
-      { "@type": "Question", "name": "Сколько времени занимает сборка каркаса?", "acceptedAnswer": { "@type": "Answer", "text": "Каркас собирается как конструктор: от 5 до 30 дней в зависимости от площади — и 30 это максимум. Точный срок фиксируем в договоре и не сдвигаем." } },
-      { "@type": "Question", "name": "Что входит в расчёт каркаса, а что считается отдельно?", "acceptedAnswer": { "@type": "Answer", "text": "Ступень 1 — металлокаркас ЛСТК (изготовление и монтаж), свайный фундамент и ростверк. Тёплый контур и отделка — ступени 2 и 3, их бесплатно посчитает инженер до подписания договора." } },
-      { "@type": "Question", "name": "Какая гарантия и что в неё входит?", "acceptedAnswer": { "@type": "Answer", "text": "Гарантия 10 лет на несущие конструкции и монтажные работы по договору. Расчётный срок службы оцинкованного каркаса — свыше 50 лет." } },
-      { "@type": "Question", "name": "А если пожар? Металл же «поплывёт»?", "acceptedAnswer": { "@type": "Answer", "text": "Сталь не горит и не поддерживает горение. Оцинковка 275 г/м² плюс обшивка ГВЛ 12,5 мм дают огнезащиту конструкции — в отличие от деревянного каркаса, которому в этом сравнении нечего ответить." } },
-      { "@type": "Question", "name": "Металлический дом — это же холодно?", "acceptedAnswer": { "@type": "Answer", "text": "Металл в стене — это каркас, а не стена. Тепло держит пирог: минвата 150 мм с перекрёстным слоем, а термопрофиль разрывает мостики холода. Теплопотери считаем по СП РК для вашего региона — при −30 °C дома тепло." } },
-      { "@type": "Question", "name": "Дождь и град по крыше — не гремит?", "acceptedAnswer": { "@type": "Answer", "text": "Кровельный пирог гасит звук: минвата 150 мм работает и как звукоизоляция, между профлистом и комнатой — мембраны, вентзазор и потолок. По шуму дождя такой дом не отличается от любого дома с металлочерепицей." } },
-      { "@type": "Question", "name": "На металле будет конденсат?", "acceptedAnswer": { "@type": "Answer", "text": "Конденсат появляется там, где тёплый воздух встречает холодный металл. В нашем пироге профиль закрыт утеплителем и пароизоляцией — точка росы вынесена в утеплитель, каркас всегда сухой, а вентзазор выводит влагу наружу." } },
-      { "@type": "Question", "name": "Нужен ли фундамент и делаете ли вы его?", "acceptedAnswer": { "@type": "Answer", "text": "Каркас весит ~30 кг/м², поэтому достаточно лёгкого свайно-винтового фундамента — он входит в ступень 1, которую бесплатно посчитает инженер. Можем смонтировать каркас и на ваш готовый фундамент." } },
-      { "@type": "Question", "name": "Можно ли строить зимой?", "acceptedAnswer": { "@type": "Answer", "text": "Да. Сборка на болтах без бетона и «мокрых» процессов идёт круглый год — монтируем даже при −30 °C." } },
-      { "@type": "Question", "name": "Есть ли оплата этапами?", "acceptedAnswer": { "@type": "Answer", "text": "Да, вы платите за результат каждого этапа: проект, производство, монтаж. График оплат фиксируется в договоре." } }
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://stroykarkas.kz/#howto-build",
+  "name": "Как мы строим здание на стальном каркасе ЛСТК",
+  "description": "5 этапов от заявки до сдачи объекта. Цена фиксируется в договоре на втором этапе и дальше не растёт.",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Заявка и замер", "text": "Обсуждаем задачу, инженер выезжает на участок и составляет техзадание." },
+    { "@type": "HowToStep", "position": 2, "name": "Проект и договор", "text": "Здесь цена фиксируется. Риск удорожания материалов — наш, не ваш." },
+    { "@type": "HowToStep", "position": 3, "name": "Производство", "text": "Изготавливаем каркас на собственном заводе с контролем ОТК." },
+    { "@type": "HowToStep", "position": 4, "name": "Доставка и монтаж", "text": "Своя логистика и монтажные бригады собирают здание точно в срок." },
+    { "@type": "HowToStep", "position": 5, "name": "Сдача", "text": "Передаём объект с документами и гарантией 10 лет." }
+  ]
+}
   </script>
 </head>
 <body>
@@ -116,7 +650,7 @@
     <!-- ================= HERO ================= -->
     <section class="hero hero--solo" id="hero">
       <div class="hero__media" aria-hidden="true">
-        <img class="hero__parallax" src="assets/img/real-bigframe.webp" alt="" fetchpriority="high" />
+        <img class="hero__parallax" src="assets/img/real-bigframe.webp" alt="Смонтированный стальной каркас здания ЛСТК" fetchpriority="high" />
         <video class="hero__video" autoplay muted loop playsinline preload="metadata">
           <source src="assets/video/hero.mp4?v=6" type="video/mp4" />
         </video>
@@ -125,7 +659,7 @@
 
       <div class="container hero__inner hero__inner--solo">
         <div class="hero__content" data-reveal>
-          <span class="eyebrow eyebrow--hero"><span class="eyebrow__dot"></span>Технология ЛСТК · собственное производство · Казахстан</span>
+          <span class="eyebrow eyebrow--hero"><span class="eyebrow__dot"></span>Технология ЛСТК · свой завод в Астане · монтаж по всему Казахстану</span>
           <h1 class="hero__title">От завода — до готового здания. <span class="accent">За считанные недели</span></h1>
           <p class="hero__lead">Дом, А-фрейм, магазин или гостиница на стальном каркасе ЛСТК: <b>не горит, не ржавеет, служит 50+ лет</b>. Собираем на болтах — без сварки и бетона, круглый год даже при −30 °C. Цена и срок фиксируются в договоре.</p>
           <ul class="hero__chips">
@@ -304,8 +838,8 @@
       <div class="container">
         <div class="section__head" data-reveal>
           <span class="kicker">Что мы строим</span>
-          <h2 class="section__title">От дома до гостиницы — каркас под любую задачу</h2>
-          <p class="section__desc">Проектируем под вашу задачу по нормам СП РК. Каркас один — назначения разные.</p>
+          <h2 class="section__title">Каркасные здания под ключ — от дома до гостиницы</h2>
+          <p class="section__desc">Быстровозводимые здания и модульные конструкции из металлокаркаса — проектируем под вашу задачу по нормам СП РК. Каркас один — назначения разные.</p>
         </div>
 
         <div class="scards scards--row" data-reveal>
@@ -317,10 +851,10 @@
             </div>
           </article>
           <article class="scard">
-            <img class="scard__img" src="assets/img/real-aframe.webp" alt="А-фрейм дома и глэмпинги" loading="lazy" />
+            <img class="scard__img" src="assets/img/real-aframe.webp" alt="А-фрейм и барнхаус каркас ЛСТК для глэмпинга, Казахстан" loading="lazy" />
             <div class="scard__body">
-              <h3 class="scard__title">А-фреймы и глэмпинги</h3>
-              <p class="scard__text">Домики для отдыха и туризма — как наши готовые объекты на фото.</p>
+              <h3 class="scard__title">А-фреймы, барнхаусы и глэмпинги</h3>
+              <p class="scard__text">А-фрейм, барнхаус и домики для базы отдыха под ключ — как наши готовые объекты на фото.</p>
             </div>
           </article>
           <article class="scard">
@@ -349,6 +883,13 @@
             <div class="scard__body">
               <h3 class="scard__title">СТО и автомойки</h3>
               <p class="scard__text">Большие проёмы под ворота — быстрая окупаемость.</p>
+            </div>
+          </article>
+          <article class="scard">
+            <img class="scard__img" src="assets/img/real-hotelframe.webp" alt="Вахтовый городок из ЛСТК — модульные здания, Казахстан" loading="lazy" />
+            <div class="scard__body">
+              <h3 class="scard__title">Вахтовые городки и модули</h3>
+              <p class="scard__text">Блок-модули, столовые, общежития под ключ — мобильно и всесезонно.</p>
             </div>
           </article>
         </div>
@@ -560,7 +1101,7 @@
       <div class="works__track-wrap" data-reveal>
         <div class="works__track" id="worksTrack">
           <article class="work">
-            <div class="work__media"><img src="assets/img/real-hotelframe.webp" alt="Каркас гостиницы на ЛСТК" loading="lazy" /></div>
+            <div class="work__media"><img src="assets/img/real-hotelframe.webp" alt="Каркас гостиницы из ЛСТК, Казахстан" loading="lazy" /></div>
             <div class="work__body">
               <span class="work__tag">Гостиница</span>
               <h3 class="work__title">Каркас гостиницы</h3>
@@ -568,7 +1109,7 @@
             </div>
           </article>
           <article class="work">
-            <div class="work__media"><img src="assets/img/real-2fl-piles.webp" alt="Двухэтажный каркас ЛСТК на свайном фундаменте" loading="lazy" /></div>
+            <div class="work__media"><img src="assets/img/real-2fl-piles.webp" alt="Двухэтажный каркасный дом на винтовых сваях, ЛСТК" loading="lazy" /></div>
             <div class="work__body">
               <span class="work__tag">Дом</span>
               <h3 class="work__title">Двухэтажный дом на сваях</h3>
@@ -576,7 +1117,7 @@
             </div>
           </article>
           <article class="work">
-            <div class="work__media"><img src="assets/img/real-forest.webp" alt="Каркас дома с кровельными фермами" loading="lazy" /></div>
+            <div class="work__media"><img src="assets/img/real-forest.webp" alt="Каркас дома с мансардными фермами ЛСТК" loading="lazy" /></div>
             <div class="work__body">
               <span class="work__tag">Дом</span>
               <h3 class="work__title">Дом с мансардными фермами</h3>
@@ -584,7 +1125,7 @@
             </div>
           </article>
           <article class="work">
-            <div class="work__media"><img src="assets/img/real-2fl.webp" alt="Каркас двухэтажного дома ЛСТК" loading="lazy" /></div>
+            <div class="work__media"><img src="assets/img/real-2fl.webp" alt="Каркас двухэтажного дома ЛСТК, сборка на болтах" loading="lazy" /></div>
             <div class="work__body">
               <span class="work__tag">Дом</span>
               <h3 class="work__title">Каркас двухэтажного дома</h3>
@@ -592,7 +1133,7 @@
             </div>
           </article>
           <article class="work">
-            <div class="work__media"><img src="assets/img/real-commerce.webp" alt="Готовое торговое здание на ЛСТК" loading="lazy" /></div>
+            <div class="work__media"><img src="assets/img/real-commerce.webp" alt="Готовое торговое здание на каркасе ЛСТК, Казахстан" loading="lazy" /></div>
             <div class="work__body">
               <span class="work__tag">Коммерция</span>
               <h3 class="work__title">Торговое здание</h3>
@@ -600,7 +1141,7 @@
             </div>
           </article>
           <article class="work">
-            <div class="work__media"><img src="assets/img/real-snow.webp" alt="Монтаж каркаса ЛСТК в снегопад" loading="lazy" /></div>
+            <div class="work__media"><img src="assets/img/real-snow.webp" alt="Монтаж стального каркаса ЛСТК зимой в снегопад, Казахстан" loading="lazy" /></div>
             <div class="work__body">
               <span class="work__tag">Зима</span>
               <h3 class="work__title">Монтаж в снегопад</h3>
@@ -608,7 +1149,7 @@
             </div>
           </article>
           <article class="work">
-            <div class="work__media"><img src="assets/img/real-piles.webp" alt="Монтаж винтовой сваи" loading="lazy" /></div>
+            <div class="work__media"><img src="assets/img/real-piles.webp" alt="Монтаж винтовых свай под каркасный дом" loading="lazy" /></div>
             <div class="work__body">
               <span class="work__tag">Фундамент</span>
               <h3 class="work__title">Монтаж винтовых свай</h3>
@@ -616,7 +1157,7 @@
             </div>
           </article>
           <article class="work">
-            <div class="work__media"><img src="assets/img/real-mountains.webp" alt="Строительство каркасного дома в горах" loading="lazy" /></div>
+            <div class="work__media"><img src="assets/img/real-mountains.webp" alt="Строительство каркасного дома ЛСТК в горах" loading="lazy" /></div>
             <div class="work__body">
               <span class="work__tag">Горы</span>
               <h3 class="work__title">Объект в горной местности</h3>
@@ -733,11 +1274,47 @@
         <div class="accordion" id="accordion">
           <div class="acc" data-reveal>
             <button class="acc__head" aria-expanded="false">Из чего делается каркас?<span class="acc__ic"></span></button>
-            <div class="acc__body"><p>Несущий каркас — из лёгких стальных тонкостенных конструкций (ЛСТК): оцинкованный профиль, сборка на болтах и заклёпках, без сварки. Металл не ржавеет и не горит, а геометрия стен идеально ровная.</p></div>
+            <div class="acc__body"><p>Несущий каркас — из лёгких стальных тонкостенных конструкций (ЛСТК): оцинкованный профиль, сборка на болтах и заклёпках, без сварки. Металл не ржавеет и не горит, геометрия стен идеально ровная.</p></div>
           </div>
           <div class="acc" data-reveal>
             <button class="acc__head" aria-expanded="false">Сколько времени занимает сборка каркаса?<span class="acc__ic"></span></button>
             <div class="acc__body"><p>Каркас собирается как конструктор: от 5 до 30 дней в зависимости от площади — и 30 это максимум. Точный срок фиксируем в договоре и не сдвигаем.</p></div>
+          </div>
+          <div class="acc" data-reveal>
+            <button class="acc__head" aria-expanded="false">Где в Казахстане заказать каркасный дом под ключ?<span class="acc__ic"></span></button>
+            <div class="acc__body"><p>У нас собственный завод ЛСТК в Астане, а монтаж мы ведём по всему Казахстану — Астана, Алматы, Шымкент, Караганда, Актобе и все регионы. Проектируем, производим и собираем каркас под ключ.</p></div>
+          </div>
+          <div class="acc" data-reveal>
+            <button class="acc__head" aria-expanded="false">Есть ли у вас собственный завод ЛСТК?<span class="acc__ic"></span></button>
+            <div class="acc__body"><p>Да. Собственный завод в Астане со станками ЧПУ: катаем и раскраиваем оцинкованный профиль из стали G350 с цинковым покрытием Zn275. Полный цикл — проект, производство, доставка, монтаж — в одних руках, без наценки посредника.</p></div>
+          </div>
+          <div class="acc" data-reveal>
+            <button class="acc__head" aria-expanded="false">В каких городах вы строите?<span class="acc__ic"></span></button>
+            <div class="acc__body"><p>Монтируем по всему Казахстану: Астана и Акмолинская область, Алматы, Шымкент, Караганда, Актобе, Костанай, Атырау и другие регионы. Своя логистика и монтажные бригады.</p></div>
+          </div>
+          <div class="acc" data-reveal>
+            <button class="acc__head" aria-expanded="false">Можно ли надстроить этаж без усиления фундамента?<span class="acc__ic"></span></button>
+            <div class="acc__body"><p>Как правило, да. Надстройка из ЛСТК весит 25–40 кг/м² — в 3–5 раз легче кирпича или бетона, а фундаменты по нормам имеют запас надёжности. Обычно этого достаточно на один этаж или мансарду без работ с фундаментом. Монтаж идёт без тяжёлой техники, вы можете продолжать жить в доме. Точную возможность инженер рассчитывает по СП РК под ваш фундамент.</p></div>
+          </div>
+          <div class="acc" data-reveal>
+            <button class="acc__head" aria-expanded="false">Подходит ли каркас для сейсмозоны Алматы?<span class="acc__ic"></span></button>
+            <div class="acc__body"><p>Да, и даже предпочтителен. Алматы и юг Казахстана — зона до 9 баллов (MSK-64). Лёгкий стальной каркас на болтах работает как единая упругая рама и за счёт малой инерционной массы лучше переносит сейсмику. Расчёт ведём по СП РК 2.03-30 «Строительство в сейсмических районах».</p></div>
+          </div>
+          <div class="acc" data-reveal>
+            <button class="acc__head" aria-expanded="false">Не холодно ли зимой в доме из металлокаркаса? Что с мостиками холода?<span class="acc__ic"></span></button>
+            <div class="acc__body"><p>Металл в стене — это каркас, а не стена. Тепло держит пирог: минвата 150 мм с перекрёстным слоем, а термопрофиль разрывает мостики холода. Теплопотери считаем по СП РК для вашего региона — при −30 °C дома тепло.</p></div>
+          </div>
+          <div class="acc" data-reveal>
+            <button class="acc__head" aria-expanded="false">Какие минусы у ЛСТК и как вы их закрываете?<span class="acc__ic"></span></button>
+            <div class="acc__body"><p>Честно про типовые страхи: мостики холода, гулкость и промерзание стыков — всё это появляется при плохом монтаже. Мы закрываем их конструктивно: термопрофиль с прорезями, перекрёстное утепление минватой, пароизоляция и узлы по СП РК. При грамотном пироге дом тёплый и тихий.</p></div>
+          </div>
+          <div class="acc" data-reveal>
+            <button class="acc__head" aria-expanded="false">Сколько служит каркас из оцинкованной стали?<span class="acc__ic"></span></button>
+            <div class="acc__body"><p>Расчётный срок службы оцинкованного профиля G350/Zn275 — свыше 50 лет: сталь не ржавеет. Гарантия по договору — 10 лет на несущие конструкции и монтаж. Срок службы и гарантия — это разные вещи.</p></div>
+          </div>
+          <div class="acc" data-reveal>
+            <button class="acc__head" aria-expanded="false">Почему на сайте нет цены и от чего зависит стоимость?<span class="acc__ic"></span></button>
+            <div class="acc__body"><p>Стоимость индивидуальна: зависит от площади, этажности, региона и логистики, типа фундамента и комплектации. Мы считаем от собственного завода без посреднической наценки, фиксируем цену в договоре и не двигаем её. Инженер посчитает ваш проект бесплатно.</p></div>
           </div>
           <div class="acc" data-reveal>
             <button class="acc__head" aria-expanded="false">Что входит в расчёт каркаса, а что считается отдельно?<span class="acc__ic"></span></button>
@@ -752,24 +1329,20 @@
             <div class="acc__body"><p>Сталь не горит и не поддерживает горение. Оцинковка 275 г/м² плюс обшивка ГВЛ 12,5 мм дают огнезащиту конструкции — в отличие от деревянного каркаса, которому в этом сравнении нечего ответить.</p></div>
           </div>
           <div class="acc" data-reveal>
-            <button class="acc__head" aria-expanded="false">Металлический дом — это же холодно?<span class="acc__ic"></span></button>
-            <div class="acc__body"><p>Металл в стене — это каркас, а не стена. Тепло держит «пирог»: минвата 150 мм с перекрёстным слоем, а термопрофиль разрывает мостики холода. Теплопотери считаем по СП РК для вашего региона — при −30 °C дома тепло.</p></div>
-          </div>
-          <div class="acc" data-reveal>
             <button class="acc__head" aria-expanded="false">Дождь и град по крыше — не гремит?<span class="acc__ic"></span></button>
             <div class="acc__body"><p>Кровельный пирог гасит звук: минвата 150 мм работает и как звукоизоляция, между профлистом и комнатой — мембраны, вентзазор и потолок. По шуму дождя такой дом не отличается от любого дома с металлочерепицей.</p></div>
           </div>
           <div class="acc" data-reveal>
             <button class="acc__head" aria-expanded="false">На металле будет конденсат?<span class="acc__ic"></span></button>
-            <div class="acc__body"><p>Конденсат появляется там, где тёплый воздух встречает холодный металл. В нашем «пироге» профиль закрыт утеплителем и пароизоляцией — точка росы вынесена в утеплитель, каркас всегда сухой, а вентзазор выводит влагу наружу.</p></div>
+            <div class="acc__body"><p>Конденсат появляется там, где тёплый воздух встречает холодный металл. В нашем пироге профиль закрыт утеплителем и пароизоляцией — точка росы вынесена в утеплитель, каркас всегда сухой, а вентзазор выводит влагу наружу.</p></div>
           </div>
           <div class="acc" data-reveal>
             <button class="acc__head" aria-expanded="false">Нужен ли фундамент и делаете ли вы его?<span class="acc__ic"></span></button>
             <div class="acc__body"><p>Каркас весит ~30 кг/м², поэтому достаточно лёгкого свайно-винтового фундамента — он входит в ступень 1, которую бесплатно посчитает инженер. Можем смонтировать каркас и на ваш готовый фундамент.</p></div>
           </div>
           <div class="acc" data-reveal>
-            <button class="acc__head" aria-expanded="false">Можно ли строить зимой?<span class="acc__ic"></span></button>
-            <div class="acc__body"><p>Да. Сборка на болтах без бетона и «мокрых» процессов идёт круглый год — монтируем даже при −30 °C.</p></div>
+            <button class="acc__head" aria-expanded="false">Можно ли строить каркасный дом зимой?<span class="acc__ic"></span></button>
+            <div class="acc__body"><p>Да. Каркасное строительство — одна из немногих всесезонных технологий: нет бетона и мокрых работ, которые боятся мороза. Сборка на болтах идёт круглый год, монтируем даже при −30 °C.</p></div>
           </div>
           <div class="acc" data-reveal>
             <button class="acc__head" aria-expanded="false">Есть ли оплата этапами?<span class="acc__ic"></span></button>

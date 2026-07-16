@@ -1,4 +1,77 @@
+# robots.txt — stroykarkas.kz
+# LLM guidance: https://stroykarkas.kz/llms.txt
+
 User-agent: *
+Allow: /
+Disallow: /tour.html
+
+# --- Поисковые системы ---
+User-agent: Googlebot
+Allow: /
+Disallow: /tour.html
+
+User-agent: Bingbot
+Allow: /
+Disallow: /tour.html
+
+User-agent: YandexBot
+Allow: /
+Disallow: /tour.html
+
+# --- ИИ-краулеры (обучение и поисковые ответы) ---
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /tour.html
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /tour.html
+
+User-agent: GPTBot
+Allow: /
+Disallow: /tour.html
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /tour.html
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /tour.html
+
+User-agent: Claude-User
+Allow: /
+Disallow: /tour.html
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /tour.html
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /tour.html
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /tour.html
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /tour.html
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /tour.html
+
+User-agent: CCBot
+Allow: /
+Disallow: /tour.html
+
+User-agent: Amazonbot
+Allow: /
+Disallow: /tour.html
+
+User-agent: Bytespider
 Allow: /
 Disallow: /tour.html
 
