@@ -141,6 +141,23 @@
           });
         }, { passive: true });
       }
+      /* ---------- Видео-сборка «конструктора»: проиграть один раз при появлении ---------- */
+      var kitVideo = document.getElementById('kitVideo');
+      if (kitVideo) {
+        var kitHost = kitVideo.closest('.kitshot');
+        var kitPlayed = false;
+        var kitTick = function () {
+          if (kitPlayed || !kitHost || !kitHost.classList.contains('is-inview')) return;
+          kitPlayed = true;
+          window.removeEventListener('scroll', kitTick);
+          var p = kitVideo.play();
+          if (p && p.catch) p.catch(function () {}); // автоплей заблокирован — остаётся постер
+        };
+        window.addEventListener('scroll', kitTick, { passive: true });
+        setTimeout(kitTick, 500);
+        setTimeout(kitTick, 2000);
+      }
+
       /* ---------- Счётчик нагрузки 170 → 4 420 кг ---------- */
       var loadNum = document.getElementById('loadNum');
       if (loadNum) {

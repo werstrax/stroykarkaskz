@@ -39,7 +39,7 @@
 
   <link rel="preload" as="image" href="assets/img/real-bigframe.webp" fetchpriority="high" />
 
-  <link rel="stylesheet" href="css/styles.css?v=30" />
+  <link rel="stylesheet" href="css/styles.css?v=31" />
 
   <script type="application/ld+json">
 {
@@ -773,7 +773,9 @@
         </div>
 
         <figure class="kitshot" data-reveal>
-          <img src="assets/img/exploded.webp" alt="Схема сборки каркаса: фермы кровли и стойки зависли над местами установки, каждая деталь пронумерована" loading="lazy" width="1536" height="1024" />
+          <video id="kitVideo" muted playsinline preload="metadata" poster="assets/img/exploded.webp" width="1280" height="720" aria-label="Анимация сборки каркаса: детали опускаются на свои места">
+            <source src="assets/video/kitshot.mp4?v=1" type="video/mp4" />
+          </video>
           <figcaption class="kitshot__cap"><b>С завода — комплект.</b> Каждая деталь пронумерована и встаёт на своё место — сборка занимает от 5 до 30 дней. Иллюстрация принципа сборки.</figcaption>
         </figure>
 
@@ -1478,6 +1480,6 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="js/main.js?v=23" defer></script>
+  <script src="js/main.js?v=24" defer></script>
 </body>
 </html>

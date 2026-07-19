@@ -1105,3 +1105,5 @@ ul { list-style: none; }
   .mapblock__map { height: 300px; }
   .mapblock__card { position: static; transform: none; max-width: none; border-radius: 0; box-shadow: none; padding: 24px; }
 }
+
+.kitshot video { width: 100%; height: auto; display: block; }
