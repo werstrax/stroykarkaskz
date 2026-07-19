@@ -18,6 +18,8 @@
   <link rel="alternate" hreflang="ru" href="https://stroykarkas.kz/" />
   <link rel="alternate" hreflang="x-default" href="https://stroykarkas.kz/" />
   <meta name="geo.placename" content="Астана" />
+  <meta name="geo.position" content="51.146743;71.371660" />
+  <meta name="ICBM" content="51.146743, 71.371660" />
   <meta property="og:site_name" content="СТРОЙКАРКАС" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -37,7 +39,7 @@
 
   <link rel="preload" as="image" href="assets/img/real-bigframe.webp" fetchpriority="high" />
 
-  <link rel="stylesheet" href="css/styles.css?v=29" />
+  <link rel="stylesheet" href="css/styles.css?v=30" />
 
   <script type="application/ld+json">
 {
@@ -68,7 +70,9 @@
       },
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Коргалжынское шоссе, 19т, офис 314б",
         "addressLocality": "Астана",
+        "postalCode": "Z05K8A7",
         "addressCountry": "KZ"
       },
       "areaServed": [
@@ -143,7 +147,13 @@
       "keywords": "ЛСТК, каркасный дом под ключ, стальной каркас, каркасное строительство Казахстан, быстровозводимые здания, модульные здания, металлокаркас, А-фрейм, барнхаус, надстройка этажа без усиления фундамента, оцинкованная сталь, завод ЛСТК Астана, каркасный дом Алматы",
       "hasOfferCatalog": {
         "@id": "https://stroykarkas.kz/#catalog"
-      }
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.146743,
+        "longitude": 71.37166
+      },
+      "hasMap": "https://2gis.kz/astana/geo/70000001018069198/71.371660,51.146743"
     },
     {
       "@type": "WebSite",
@@ -1389,6 +1399,21 @@
     </section>
   </main>
 
+
+  <!-- ================= OFFICE MAP ================= -->
+  <section class="mapblock" id="office">
+    <iframe class="mapblock__map" src="https://www.openstreetmap.org/export/embed.html?bbox=71.3627%2C51.1427%2C71.3806%2C51.1508&amp;layer=mapnik&amp;marker=51.146743%2C71.371660" loading="lazy" title="Офис СТРОЙКАРКАС на карте — БЦ Korgalzhyn, Астана" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="mapblock__card" data-reveal>
+      <span class="kicker">Наш офис</span>
+      <h2 class="mapblock__title">Приезжайте — обсудим проект</h2>
+      <p class="mapblock__addr">БЦ «Korgalzhyn», Коргалжынское шоссе, 19т, офис 314б,<br />Астана</p>
+      <div class="mapblock__actions">
+        <a href="https://2gis.kz/astana/geo/70000001018069198/71.371660,51.146743" target="_blank" rel="noopener" class="btn btn--primary">Открыть в 2ГИС</a>
+        <a href="https://wa.me/77013337108?text=Здравствуйте!%20Хочу%20приехать%20в%20офис%20—%20когда%20удобно?%20[офис]" target="_blank" rel="noopener" class="btn btn--wa">Договориться о встрече</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= FOOTER ================= -->
   <footer class="footer" id="contacts">
     <div class="container footer__grid">
@@ -1417,6 +1442,7 @@
         <a href="tel:+77013337108" class="footer__phone">+7 (701) 333-71-08</a>
         <a href="https://wa.me/77013337108?text=Здравствуйте!%20Пишу%20с%20сайта%20СТРОЙКАРКАС%20[футер]" target="_blank" rel="noopener">WhatsApp: +7 701 333 71 08</a>
         <a href="https://instagram.com/stroykarkaskz" target="_blank" rel="noopener">Instagram @stroykarkaskz</a>
+        <p class="footer__addr"><a href="https://2gis.kz/astana/geo/70000001018069198/71.371660,51.146743" target="_blank" rel="noopener">БЦ «Korgalzhyn», Коргалжынское шоссе, 19т, офис 314б, Астана</a></p>
         <p class="footer__addr">Строим по всему Казахстану: Астана · Алматы · Шымкент · Караганда · Актобе и все регионы</p>
       </div>
 

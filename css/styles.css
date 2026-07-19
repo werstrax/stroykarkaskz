@@ -1091,3 +1091,17 @@ ul { list-style: none; }
 .ncards__hint-ic::after { content: ''; position: absolute; inset: -3px; border-radius: 50%; border: 2px solid var(--teal); animation: hintPulse 1.8s ease-out infinite; }
 @keyframes hintPulse { 0% { transform: scale(1); opacity: .7; } 100% { transform: scale(2.1); opacity: 0; } }
 @media (max-width: 600px) { .ncards__hint { font-size: 13.5px; } }
+
+
+/* ---------- Карта офиса ---------- */
+.mapblock { position: relative; }
+.mapblock__map { display: block; width: 100%; height: 440px; border: 0; filter: saturate(.85); }
+.mapblock__card { position: absolute; top: 50%; left: max(24px, calc((100% - 1200px) / 2 + 24px)); transform: translateY(-50%);
+  background: #fff; border-radius: var(--radius); box-shadow: var(--shadow-lg); padding: 30px 34px; max-width: 430px; }
+.mapblock__title { font-size: 24px; margin: 6px 0 10px; }
+.mapblock__addr { color: var(--muted); font-size: 15px; line-height: 1.55; margin-bottom: 18px; }
+.mapblock__actions { display: flex; flex-wrap: wrap; gap: 10px; }
+@media (max-width: 700px) {
+  .mapblock__map { height: 300px; }
+  .mapblock__card { position: static; transform: none; max-width: none; border-radius: 0; box-shadow: none; padding: 24px; }
+}
